@@ -1,0 +1,6 @@
+# Bayburt Öz-Ka İnşaat A.Ş. Portal Sistemi
+# Arama motorlarının (Google, Yandex, Bing, Yahoo vb.) tüm siteyi indekslemesi yasaklanmıştır.
+# Bu siteye yalnızca doğrudan URL (https://...) girilerek erişilebilir.
+
+User-agent: *
+Disallow: /

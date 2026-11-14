@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Arama Motoru Engelleme (Google, Yandex, Bing, Yahoo vb. indekslemesini engeller) -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="yandex" content="none" />
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="slurp" content="noindex, nofollow" />
+
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <title>BAYBURT ÖZ-KA YÖNETİM PORTALI</title>
+    <meta name="description" content="Bayburt Öz-Ka Yönetim Portalı - Kurumsal İşlem Modülleri ve Süreç Yönetimi." />
+    <meta property="og:title" content="BAYBURT ÖZ-KA YÖNETİM PORTALI" />
+    <meta property="og:description" content="Bayburt Öz-Ka Yönetim Portalı - Kurumsal İşlem Modülleri ve Süreç Yönetimi." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tarayıcı İnceleme, F12, Sağ Tık ve Kaynak Kodu Koruması -->
+    <script>
+      (function() {
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+        window.addEventListener('keydown', function(e) {
+          if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); e.stopPropagation(); return false; }
+          var c = e.ctrlKey || e.metaKey;
+          if (c && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) { e.preventDefault(); return false; }
+          if (c && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) { e.preventDefault(); return false; }
+          if (c && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) { e.preventDefault(); return false; }
+          if (c && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+            e.preventDefault(); e.stopPropagation(); return false;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class="font-['Plus_Jakarta_Sans',sans-serif] antialiased select-none" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

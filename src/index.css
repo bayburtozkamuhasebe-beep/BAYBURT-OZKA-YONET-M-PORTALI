@@ -1,0 +1,382 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* =========================================================================
+   KARANLIK MOD (DARK MODE - GECE MODU)
+   ========================================================================= */
+html.dark body {
+  background-color: #0a0a0c;
+  color: #f8fafc;
+}
+
+/* =========================================================================
+   AYDINLIK MOD (LIGHT MODE - GÜNDÜZ MODU)
+   Tüm ana portal ve butonlara tıklanınca açılan bütün alt sayfalar
+   (Talepler, Ödeme, Personel, Bankalar, Faturalar, Çek-Senet, Araç vb.)
+   tamamen aydınlık, net ve yüksek kontrastlı olur.
+   ========================================================================= */
+html:not(.dark) body,
+html:not(.dark) .min-h-screen,
+html:not(.dark) .bg-\[\#07080a\],
+html:not(.dark) .bg-\[\#07090e\],
+html:not(.dark) .bg-\[\#0a0a0c\],
+html:not(.dark) .bg-\[\#050508\],
+html:not(.dark) .bg-\[\#08090d\],
+html:not(.dark) .bg-\[\#0b0d14\],
+html:not(.dark) .bg-\[\#07080a\]\/85,
+html:not(.dark) .bg-\[\#07090e\]\/85,
+html:not(.dark) .bg-\[\#0a0a0c\]\/85,
+html:not(.dark) .bg-\[\#07080a\]\/90,
+html:not(.dark) .bg-\[\#07090e\]\/90,
+html:not(.dark) .bg-\[\#0a0a0c\]\/90,
+html:not(.dark) .bg-\[\#050508\]\/95 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Aydınlık Modda Header ve Üst Çubuklar */
+html:not(.dark) header.sticky,
+html:not(.dark) header[class*="backdrop-blur"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) header h1,
+html:not(.dark) header h2,
+html:not(.dark) header .text-white {
+  color: #0f172a !important;
+}
+
+/* Aydınlık Modda Geri Dön Butonları */
+html:not(.dark) button[id$="-back-btn"],
+html:not(.dark) .group:has(.lucide-arrow-left) {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) button[id$="-back-btn"]:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Aydınlık Modda Buton Kartları ve Paneller (Talepler, Ödeme, Personel, Bankalar, vb.) */
+html:not(.dark) .group.relative.flex.flex-col,
+html:not(.dark) .bg-white\/\[0\.05\],
+html:not(.dark) .bg-white\/\[0\.04\],
+html:not(.dark) .bg-white\/\[0\.03\],
+html:not(.dark) .bg-white\/\[0\.02\],
+html:not(.dark) .bg-white\/5 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .bg-white\/\[0\.09\],
+html:not(.dark) .bg-white\/\[0\.08\],
+html:not(.dark) .bg-white\/10 {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .hover\:bg-white\/\[0\.09\]:hover,
+html:not(.dark) .hover\:bg-white\/\[0\.08\]:hover,
+html:not(.dark) .hover\:bg-white\/\[0\.05\]:hover,
+html:not(.dark) .hover\:bg-white\/15:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Aydınlık Modda Modallar, Düzenleme Pencereleri ve Kartlar */
+html:not(.dark) .bg-\[\#0f1117\],
+html:not(.dark) .bg-\[\#0c0d12\],
+html:not(.dark) .bg-\[\#0e1017\],
+html:not(.dark) .bg-\[\#10131c\],
+html:not(.dark) .bg-\[\#131622\],
+html:not(.dark) .bg-\[\#12141c\],
+html:not(.dark) .bg-\[\#090b10\],
+html:not(.dark) .bg-\[\#121217\],
+html:not(.dark) .bg-\[\#161922\],
+html:not(.dark) .bg-\[\#141721\],
+html:not(.dark) .bg-\[\#1e2230\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Aydınlık Modda Form Elemanları ve Inputlar */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) label {
+  color: #334155 !important;
+}
+
+/* Kenarlıklar (Borders) */
+html:not(.dark) .border-white\/10,
+html:not(.dark) .border-white\/5,
+html:not(.dark) .border-white\/15,
+html:not(.dark) .border-white\/20,
+html:not(.dark) .border-white\/25,
+html:not(.dark) .border-white\/30 {
+  border-color: #cbd5e1 !important;
+}
+
+/* =========================================================================
+   GÜNDÜZ MODU: BELİRLİ OLMAYAN / SOLUK TÜM YAZI FONTLARI SİYAH OLSUN
+   ========================================================================= */
+
+/* Tüm gri, arduvaz ve soluk yazı renklerini net siyah yap */
+html:not(.dark) .text-gray-300,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-gray-600,
+html:not(.dark) .text-gray-700,
+html:not(.dark) .text-slate-300,
+html:not(.dark) .text-slate-400,
+html:not(.dark) .text-slate-500,
+html:not(.dark) .text-slate-600,
+html:not(.dark) .text-slate-700,
+html:not(.dark) .text-zinc-300,
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-zinc-600,
+html:not(.dark) .text-neutral-300,
+html:not(.dark) .text-neutral-400,
+html:not(.dark) .text-neutral-500,
+html:not(.dark) .text-stone-300,
+html:not(.dark) .text-stone-400,
+html:not(.dark) .text-stone-500 {
+  color: #000000 !important;
+}
+
+/* Yarı saydam beyaz yazıların açık arka planda silikleşmesini önle */
+html:not(.dark) .text-white\/30,
+html:not(.dark) .text-white\/40,
+html:not(.dark) .text-white\/50,
+html:not(.dark) .text-white\/60,
+html:not(.dark) .text-white\/70,
+html:not(.dark) .text-white\/80,
+html:not(.dark) .text-white\/90,
+html:not(.dark) .text-white:not([class*="bg-blue"]):not([class*="bg-emerald"]):not([class*="bg-red"]):not([class*="bg-rose"]):not([class*="bg-indigo"]):not([class*="bg-violet"]):not([class*="bg-amber"]):not([class*="bg-sky"]) {
+  color: #000000 !important;
+}
+
+/* Sayfalardaki tüm paragraflar, açıklamalar ve alt metinler */
+html:not(.dark) p,
+html:not(.dark) span.italic,
+html:not(.dark) .italic,
+html:not(.dark) small,
+html:not(.dark) label,
+html:not(.dark) table td,
+html:not(.dark) table th {
+  color: #000000 !important;
+}
+
+/* Alt sayfalardaki 'Bağlantı linki yok', 'tablosunda Sıra No...', 'Buton Tanımla' vb. */
+html:not(.dark) .group .text-gray-300,
+html:not(.dark) .group .text-gray-400,
+html:not(.dark) .group .text-gray-500,
+html:not(.dark) .group .text-slate-400,
+html:not(.dark) .group .text-slate-500,
+html:not(.dark) .group p,
+html:not(.dark) .group span:not([class*="bg-"]) {
+  color: #000000 !important;
+}
+
+/* Hover durumunda beyaz olup kaybolmasını engelle */
+html:not(.dark) .hover\:text-white:hover,
+html:not(.dark) .group:hover .group-hover\:text-white,
+html:not(.dark) .hover\:text-slate-200:hover,
+html:not(.dark) .hover\:text-gray-200:hover,
+html:not(.dark) [id^="portal-btn-"]:hover * {
+  color: #000000 !important;
+}
+
+/* =========================================================================
+   GÜNDÜZ MODU: BÜTÜN BUTONLARDAKİ İSİMLER VE FONTLAR SİYAH OLSUN
+   ========================================================================= */
+
+/* Ana portal butonlarındaki isimler (h3 başlıkları) */
+html:not(.dark) [id^="portal-btn-"] h3,
+html:not(.dark) [id^="portal-btn-"] .font-bold,
+html:not(.dark) [id^="portal-btn-"] .font-extrabold {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Tüm alt sayfalardaki (Talepler, Ödeme, Personel, Bankalar, Faturalar, Çek-Senet vb.) buton kartlarındaki isimler */
+html:not(.dark) .group h4,
+html:not(.dark) .group h3,
+html:not(.dark) .group h2,
+html:not(.dark) .group .font-bold,
+html:not(.dark) .group .font-extrabold,
+html:not(.dark) .group .font-black {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Hover durumunda da buton isimleri net ve siyah kalır */
+html:not(.dark) [id^="portal-btn-"]:hover h3,
+html:not(.dark) .group:hover h4,
+html:not(.dark) .group:hover h3 {
+  color: #000000 !important;
+}
+
+/* Buton kartlarının altındaki 'Sayfayı Aç', 'Sisteme Git', 'Güncelle' metinleri */
+html:not(.dark) [id^="portal-btn-"] .border-t span,
+html:not(.dark) .group .border-t span {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+/* Buton kartlarındaki alt bilgi / url / açıklamalar */
+html:not(.dark) [id^="portal-btn-"] p,
+html:not(.dark) .group p {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+/* Buton sıra numarası veya buton rozetleri (Örn: 1. Buton, 26 Buton Panel) */
+html:not(.dark) [id^="portal-btn-"] [class*="rounded-full"] span,
+html:not(.dark) .group [class*="rounded-full"] span {
+  font-weight: 800 !important;
+}
+
+/* Netlify Drawer, Badge & Feedback Widget Suppression */
+netlify-drawer,
+[data-netlify-drawer],
+#netlify-badge,
+iframe[src*="netlify"],
+div[class*="netlify"],
+.netlify-badge,
+[id^="netlify"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  bottom: -9999px !important;
+  z-index: -9999 !important;
+}
+
+/* =========================================================================
+   BAYBURT ÖZ-KA YÖNETİM PORTALI: HAREKETLİ AMBİYANSLI BORDO VE MAVİ IŞIK
+   ========================================================================= */
+@keyframes bordoMaviFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseDualGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes lightSheenSweep {
+  0% {
+    transform: translateX(-160%);
+  }
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+.bordo-mavi-glow-text {
+  background-image: linear-gradient(
+    90deg,
+    #be123c 0%,
+    #e11d48 22%,
+    #3b82f6 45%,
+    #06b6d4 55%,
+    #e11d48 78%,
+    #be123c 100%
+  ) !important;
+  background-size: 250% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: bordoMaviFlow 3.8s ease infinite !important;
+}
+
+.animate-bordo-mavi-flow {
+  background-size: 250% auto;
+  animation: bordoMaviFlow 3.8s ease infinite;
+}
+
+.animate-dual-pulse {
+  animation: pulseDualGlow 3s ease-in-out infinite;
+}
+
+.animate-sheen-sweep {
+  animation: lightSheenSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* =========================================================================
+   YAZDIRMA (PRINT) STİLLERİ: BANKA SÜRE UZATIM DİLEKÇESİ (A4)
+   ========================================================================= */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #banka-dilekce-print-area,
+  #banka-dilekce-print-area * {
+    visibility: visible;
+  }
+  #banka-dilekce-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20mm 20mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+}
